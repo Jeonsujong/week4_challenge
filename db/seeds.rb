@@ -6,29 +6,18 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
     
-      spot_fullname = ["Greece, Santorini",
-                        "Japan, Hokkaido",
-                        "Mongolia, Terelj",
-                        "Borabora Island",
-                        "Croatia, Dubrovnik",
-                        "Indonesia, Bali",
-                        "Singapore",
-                        "Spain, Barcelona",
-                        "Korea, Jeju"]
-                        
-      spot_name = ["산토리니",
-                    "홋카이도",
-                    "테를지",
-                    "보라보라섬",
-                    "두브로브니크",
-                    "발리",
-                    "싱가포르",
-                    "바르셀로나",
-                    "제주"]
+    spot = [ 
+        ["Greece, Santorini", "산토리니"],
+        ["Japan, Hokkaido", "홋카이도"],
+        ["Mongolia, Terelj", "테를지"],
+        ["Borabora Island", "보라보라섬"],
+        ["Croatia, Dubrovnik", "두브로브니크"],
+        ["Indonesia, Bali", "발리"],
+        ["Singapore", "싱가포르"],
+        ["Spain, Barcelona", "바르셀로나"],
+        ["Korea, Jeju", "제주"]
+    ]
     
-     @spot_fullname = spot_fullname
-     @spot_name = spot_name
-    
-    (0..8).each do |c|
-        Spot.create fullname: @spot_fullname[c], name: @spot_name[c]
+    spot.each do |s|
+        Spot.create fullname: s[0], name: s[1]
     end

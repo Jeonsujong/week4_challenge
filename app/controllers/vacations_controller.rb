@@ -3,15 +3,10 @@ class VacationsController < ApplicationController
   end
 
   def places
-    c = rand(1..9)
-    spot_image = "spot"+c.to_s
-    @spot_image = spot_image
-    
-    
-
-    s = Spot.find c
-    @fullname = s.fullname
-    @name = s.name
+    spot = Spot.all.sample(1)[0]
+    @spot_image = "spot"+spot.id.to_s
+    @fullname = spot.fullname
+    @name = spot.name
     
   end
   
